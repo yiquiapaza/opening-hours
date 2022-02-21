@@ -9,6 +9,7 @@ let oh = new opening_hours("Mo-Fr 08:00-18:00");
 console.log("Opening hours object");
 console.log(oh)
 
+
 // getStatePair
 console.log("Opening hours => getStatePair");
 // Return a simple array by date
@@ -58,4 +59,20 @@ console.log("Opening Hours: " + oh);
 let intervals = oh.getOpenIntervals(from, to);
 
 for (var days in intervals)
-  console.log( oh.getState(intervals[days][0]));
+  console.log(oh.getState(intervals[days][0]));
+
+
+console.log("Example 1");
+const example1 = new opening_hours("Mo-Su 0:00-24:00");
+console.log(example1.getState());
+
+console.log("Example 2");
+const example2 = new opening_hours("Sa-Su 0:00-24:00");
+console.log(example2.getState());
+
+console.log("Example 3");
+const example3 = new opening_hours("Mo-Su 08:00-18:00; Apr 10-15 off; Jun 08:00-14:00; Aug off; Dec 25 off");
+console.log(example3.getState());
+
+
+
